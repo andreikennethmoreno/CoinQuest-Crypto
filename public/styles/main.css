@@ -1,0 +1,207 @@
+[data-bs-theme=dark] {
+  color-scheme: dark;
+  --bs-body-bg: #100016;
+}
+
+
+.table>:not(caption)>*>* {
+  background-color: #100016;
+  font-weight: bold;
+  color: white;
+  font-size: 1.25em;
+  margin: 5rem 0; 
+}
+.table-dark {
+  --bs-table-active-bg: rgb(38, 2, 64);
+  --bs-table-hover-bg: rgb(38, 2, 64);
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
+}
+
+.nav-bar {
+  height: 100px;
+}
+
+
+.arrow-up , .positive-change{
+  color: green;
+}
+.arrow-down , .negative-change{
+  color: red;
+}
+
+
+#navbarNavAltMarkup > div > a{
+  font-weight: bold;
+  color: white;
+  font-size: 1.25em;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+th {
+  background-color: rgb(90, 3, 151) !important;
+}
+
+
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.hero {
+  height: 90vh;
+}
+.hero-text{
+  margin-top: 10rem;
+}
+.join {
+  height: 70vh;
+  margin-top:  3rem;
+}
+.big-font { 
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: .7; 
+}
+
+.moving-icons {
+  margin-bottom: -8rem;
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-between; /* Aligns items with space between them */
+  align-items: center; /* Centers items vertically */
+}
+.moving-icons img {
+  animation: floatAnimation 1s ease-in-out infinite alternate; /* Adjust animation duration and timing as needed */
+}
+
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-30px); /* Adjust the float height */
+  }
+}
+.gradient-text {
+  background: linear-gradient(to right, #ff00cc, #3333ff); /* Gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+  font-size: 6rem;
+  font-weight: bold !important;
+  z-index: 1;
+
+}
+
+.btn-dark {
+  padding: 1.25rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 1.25rem;
+  border-radius: 50px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff00cc, #3333ff); /* Gradient colors */
+
+
+}
+.nav-bar {
+  background-color: #100016 !important;
+}
+
+.footer-img {
+  margin-bottom: -10rem;
+  margin-top: 10rem;
+  display: flex;
+  
+  justify-content: space-between; /* Aligns items with space between them */
+  align-items: center; /* Centers items vertically */
+  
+}
+
+.reflect,.reflect2 {
+  position: relative;
+  display: inline-block;
+}
+
+.reflect img , .reflect2 img{
+  display: block;
+  margin-bottom:-4rem;
+  overflow: hidden;
+}
+
+.reflect::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 10px); /* Adjust the distance below the image */
+  left: 0;
+  right: 0;
+  height: 100px; /* Adjust the height of the reflection */
+  background: url('https://testnet.guardmy.fund/static/images/home-wallet.svg') no-repeat;
+  background-size: cover; /* Ensure the background covers the entire area */
+  background-position: center bottom; /* Adjust the cropping position */
+  transform: scaleY(-1); /* Flip the image vertically */
+  opacity: 0.5; /* Adjust the opacity to make it look like a reflection */
+}
+
+
+.reflect2::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 10px); /* Adjust the distance below the image */
+  left: 0;
+  right: 0;
+  height: 90px; /* Adjust the height of the reflection */
+  background: url('https://testnet.guardmy.fund/_next/image?url=%2Fstatic%2Fimages%2Fbitcoin-locker.png&w=256&q=75') no-repeat;
+  background-size: cover;
+  background-position: center bottom; /* Adjust the cropping position */
+  transform: scaleY(-1); /* Flip the image vertically */
+  opacity: 0.5; /* Adjust the opacity to make it look like a reflection */
+}
+
+
+.card {
+  --bs-card-bg: #1B1229; /* Custom property for background color */
+  color: white; /* Text color */
+  text-align: center; /* Center align text */
+  border-radius: 20%; /* Border radius for rounded corners */
+  background-color: var(--bs-card-bg); /* Background color */
+  padding: 20px; /* Example padding for content inside the card */
+  position: relative; /* Required for positioning pseudo-elements */
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border-radius: inherit;
+}
+
+.card::before {
+  z-index: -1;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+}
+
+.card::after {
+  z-index: -2;
+  background: var(--bs-card-bg); /* Match the background color of the card */
+}
+
+
+
+

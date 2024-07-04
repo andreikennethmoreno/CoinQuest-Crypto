@@ -1,0 +1,370 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="container hero ">
+
+  <div class="moving-icons ">
+      <img height="80px" class="hero-text"  src="https://coindom-crypto-search.vercel.app/static/media/bitcoin.e146d46fb598ae0d8f43.png">
+      <img height="80px" class="hero-text"   src="https://coindom-crypto-search.vercel.app/static/media/ethereum.c6cffe78f0c6abc85da9.png">
+  </div>
+  
+    <h1 class="text-center big-font mx-5">TRACK AND TRADE</h1> 
+    <h1 class="  text-center gradient-text">CRYPTO CURRENCIES</h1> 
+  
+ 
+  <div class="row justify-content-center ">
+      <div class="col-9 mt-5">
+        <div class="row">
+          <div class="col-3 text-center ">
+              <img height="100px"  src="<%= cryptoData[0].image %>" alt="Sample Image">
+              <div class="text-center">
+                  <h5><%= cryptoData[0].name %> <span>
+                      <b>
+                        <% if (cryptoData[0].percent_change_24h >= 0) { %>
+                          <span class="arrow-up">
+                            <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } else { %>
+                          <span class="arrow-down">
+                            <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } %>
+                        <span class="<%= cryptoData[0].percent_change_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+                          <%= cryptoData[0].percent_change_24h.toFixed(2) %>% 
+                        </span>
+
+                      </b></span></h5>
+                  <h5><b>$<%= cryptoData[0].price_usd %></b></h5>
+              </div>
+          </div>
+          <div class="col-3 text-center">
+               <img height="100px"  src="<%= cryptoData[1].image  %>" alt="Sample Image">
+              <div class="text-center">
+                  <h5><%= cryptoData[1].name %> <span>
+                      <b> 
+                        <% if (cryptoData[1].percent_change_24h >= 0) { %>
+                          <span class="arrow-up">
+                            <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } else { %>
+                          <span class="arrow-down">
+                            <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } %>
+                        <span class="<%= cryptoData[1].percent_change_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+                          <%= cryptoData[1].percent_change_24h.toFixed(2) %>% 
+                        </span>
+                      </b></span></h5>
+                  <h5><b>$<%= cryptoData[1].price_usd %></b></h5>
+              </div>
+          </div>
+          <div class="col-3 text-center">
+               <img height="100px"  src="<%= cryptoData[2].image  %>" alt="Sample Image">
+              <div class="text-center">
+                  <h5><%= cryptoData[2].name %> <span>
+                      <b> 
+                        <% if (cryptoData[2].percent_change_24h >= 0) { %>
+                          <span class="arrow-up">
+                            <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } else { %>
+                          <span class="arrow-down">
+                            <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } %>
+                        <span class="<%= cryptoData[2].percent_change_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+                          <%= cryptoData[2].percent_change_24h.toFixed(2) %>% 
+                        </span>
+                      </b></span></h5>
+                  <h5><b>$<%= cryptoData[2].price_usd %></b></h5>
+              </div>
+          </div>
+          <div class="col-3 text-center">
+               <img height="100px"  src="<%= cryptoData[3].image  %>" alt="Sample Image">
+              <div class="text-center">
+                  <h5><%= cryptoData[3].name %> <span>
+                      <b> 
+                        <% if (cryptoData[3].percent_change_24h >= 0) { %>
+                          <span class="arrow-up">
+                            <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } else { %>
+                          <span class="arrow-down">
+                            <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } %>
+                        <span class="<%= cryptoData[3].percent_change_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+                          <%= cryptoData[3].percent_change_24h.toFixed(2) %>% 
+                        </span>
+                      </b></span></h5>
+                  <h5><b>$<%= cryptoData[3].price_usd %></b></h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<h1 class="text-start container  my-5" style="color: white;"><b>Market Update </b></h1>
+<div class="container  ">
+  <table class="table table-dark table-hover">
+    <div class="grad-color">
+    <thead>
+      <tr>
+          <th scope="col">
+            <div class="mx-3 my-3">
+              #
+            </div>
+          </th>
+          <th scope="col">
+            <div class="mx-3 my-3">
+            Coin
+          </div>
+        </th>
+          <th scope="col">
+            <div class="mx-3 my-3" >
+            Price
+          </div>
+        </th>
+          <th scope="col">
+            <div class="mx-3 my-3" >
+            1h 
+          </div>
+        </th>
+
+          <th scope="col">
+            <div class="mx-3 my-3" >
+            24h
+          </div>
+        </th>
+
+          <th scope="col">
+            <div class="mx-3 my-3" >
+            7d 
+          </div>
+        </th>
+
+          <th scope="col">
+            <div class="mx-3 my-3" >
+            Market Cap
+          </div>
+        </th>
+          
+
+      </tr>
+    </thead>
+  </div>
+  <tbody>
+    <% cryptoData.forEach((crypto, index) => { %>
+      
+      <tr class='clickable-row' data-href="/coin/<%= crypto.id %>">
+        <td scope="row">
+          <div class="mx-3 my-2 mt-4" >
+            <%= crypto.market_cap_rank %>
+          </div>
+        </td>
+        <td>
+          <div class="mx-3 my-3" >
+            <img src="<%= crypto.image %>" alt="<%= crypto.name %> Logo" class="img-fluid rounded " style="max-width: 50px; max-height: 50px; margin-right: 20px;">
+        
+          <%= crypto.name %>
+          </div>
+          
+        </td>
+        <td >
+          <div class="mx-3 my-2 mt-4" >
+            $<%= crypto.price_usd %>
+          </div>
+        </td>
+        <td >
+          <div class="mx-3 my-2 mt-4" >
+            <% if (crypto.percent_change_1h >= 0) { %>
+              <span class="arrow-up">
+                <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } else { %>
+              <span class="arrow-down">
+                <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } %>
+            <span class="<%= crypto.percent_change_1h >= 0 ? 'positive-change' : 'negative-change' %>">
+              <%= crypto.percent_change_1h.toFixed(2) %>% 
+            </span>
+          </div>
+        </td>
+        <td >
+          <div class="mx-3 my-2 mt-4" >
+            <% if (crypto.percent_change_24h >= 0) { %>
+              <span class="arrow-up">
+                <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } else { %>
+              <span class="arrow-down">
+                <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } %>
+            <span class="<%= crypto.percent_change_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+              <%= crypto.percent_change_24h.toFixed(2) %>% 
+            </span>
+            
+          </div>
+        </td>
+        <td >
+          <div class="mx-3 my-2 mt-4" >
+            <% if (crypto.percent_change_7d >= 0) { %>
+              <span class="arrow-up">
+                <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } else { %>
+              <span class="arrow-down">
+                <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+              </span>
+            <% } %>
+            <span class="<%= crypto.percent_change_7d >= 0 ? 'positive-change' : 'negative-change' %>">
+              <%= crypto.percent_change_7d.toFixed(2) %>% 
+            </span>
+          </div>
+        </td>
+        <td >
+          <div class="mx-3 my-2 mt-4" >
+            $<%= crypto.market_cap_usd %>
+          </div>
+        </td>
+      </tr>
+      </a>
+      <% }); %>
+
+  </tbody>
+  </table>
+
+  <div class="container d-flex justify-content-center my-5">
+    <% if (currentPage > 1) { %>
+      <a class="mx-3" href="/?page=<%= currentPage - 1 %>&per_page=<%= perPage %>">
+        <svg height="2.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle> <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      </a>
+    <% } %>
+  
+    <% if (cryptoData.length === perPage) { %>
+      <a class="mx-3"  href="/?page=<%= currentPage + 1 %>&per_page=<%= perPage %>">
+        <svg height="2.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle> <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>      </a>
+    <% } %>
+  </div>
+
+
+
+    <div class="container text-center">
+      <div style="margin-bottom: 7rem; margin-top: 10rem;">   
+          <h5 class="big-font mx-5 my-5 mt-5" style="font-size: 4rem;" >WHY <span class="gradient-text" style="font-size: 4rem;">CHOOSE US?</span></h5>
+
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+              <div class="card py-5" style="width: 18rem;">
+                  <svg height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 11H8M10 15H8M16 7H8M20 10V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12.5M18 21C18 21 21 19.5701 21 17.4252V14.9229L18.8124 14.1412C18.2868 13.9529 17.712 13.9529 17.1864 14.1412L15 14.9229V17.4252C15 19.5701 18 21 18 21Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                  <div class="card-body">
+                      <h5 class="card-title  my-3">Multi-Factor Authentication (MFA)</h5>
+                      <p class="card-text">
+                          Secure accounts with multiple verification steps.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+              <div class="card py-5" style="width: 18rem;">
+                  <svg  height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>                    <div class="card-body">
+                      <h5 class="card-title  my-3">Real-Time Transaction Confirmation</h5>
+                      <p class="card-text">
+                          Instant updates on transaction status for user verification.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+              <div class="card py-5" style="width: 18rem;">
+                  <svg height="50" viewBox="0 -1 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>communication / 3 - communication, email, approve, check, envelope, mail, message icon</title> <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-894.000000, -83.000000)" id="Group" stroke="#ffffff" stroke-width="2"> <g transform="translate(893.000000, 80.000000)" id="Shape"> <polyline points="21.001266 15 16 20.5 13.001266 17.4238742"> </polyline> <polyline points="3.99663853 5 12 10 19.995112 5"> </polyline> <path d="M9,18 C7.23084308,18 7.69638925,18 4.39663853,18 C3.62343988,18 2.99663853,17.4428432 2.99663853,16.7555556 L2.99663853,5.24444444 C2.99663853,4.55715676 3.62343988,4 4.39663853,4 L19.595112,4 C20.3683106,4 20.995112,4.55715676 20.995112,5.24444444 C20.9992147,7.80802349 21.001266,9.72654201 21.001266,11"> </path> </g> </g> </g> </g></svg>
+                  <div class="card-body">
+                      <h5 class="card-title  my-3">Encrypted Communication</h5>
+                      <p class="card-text">
+                          Protect data with secure encryption protocols.
+
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <div class="container mt-5  pt-5 join">
+    <div class="moving-icons ">
+        <img height="80px" style="margin-left: 11rem;" src="https://coindom-crypto-search.vercel.app/static/media/bitcoin.e146d46fb598ae0d8f43.png">
+        <img height="80px" style="margin-right: 11rem;" src="https://coindom-crypto-search.vercel.app/static/media/ethereum.c6cffe78f0c6abc85da9.png">
+    </div>
+    
+    <h1 class="text-center big-font mx-5 mt-5">JOIN US VIA</h1> 
+    <h1 class="text-center gradient-text">DISCORD</h1> 
+
+    <div class="text-center">
+        <h5>Invest and manage all your crypto at one place.</h5>
+
+        <button type="button" class="mt-5 btn btn-dark btn-lg">Join via Discord</button>
+
+    </div>
+       
+</div>
+
+<div class="container mb-5 pb-3">
+  <div class="footer-img " >
+      <div class="reflect " >
+          <img height="260" src="https://testnet.guardmy.fund/static/images/home-wallet.svg">
+      </div>
+      <div class="reflect2" >
+          <img height="280" src="https://testnet.guardmy.fund/_next/image?url=%2Fstatic%2Fimages%2Fbitcoin-locker.png&w=256&q=75">
+      </div>
+  </div>
+
+  <div class="text-center my-4 ">
+       <svg height="30px" class="mx-2" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z" fill="#ffffff"></path> </g></svg>
+        <svg  height="35px" class="mx-2" width="35px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m68 138-8 16c-10.19-4.246-20.742-8.492-31.96-15.8-3.912-2.549-6.284-6.88-6.378-11.548-.488-23.964 5.134-48.056 19.369-73.528 1.863-3.334 4.967-5.778 8.567-7.056C58.186 43.02 64.016 40.664 74 39l6 11s6-2 16-2 16 2 16 2l6-11c9.984 1.664 15.814 4.02 24.402 7.068 3.6 1.278 6.704 3.722 8.567 7.056 14.235 25.472 19.857 49.564 19.37 73.528-.095 4.668-2.467 8.999-6.379 11.548-11.218 7.308-21.769 11.554-31.96 15.8l-8-16m-68-8s20 10 40 10 40-10 40-10"></path><ellipse cx="71" cy="101" fill="#ffffff" rx="13" ry="15"></ellipse><ellipse cx="121" cy="101" fill="#ffffff" rx="13" ry="15"></ellipse></g></svg>
+        <svg  height="30px" class="mx-2" fill="#ffffff" viewBox="0 0 1920.00 1920.00" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="m1416.013 791.915-30.91 225.617h-371.252v789.66H788.234v-789.66H449.808V791.915h338.426V585.137c0-286.871 176.207-472.329 449.09-472.329 116.87 0 189.744 6.205 231.822 11.845l-3.272 213.66-173.5.338c-4.737-.451-117.771-9.25-199.332 65.655-52.568 48.169-79.191 117.433-79.191 205.65v181.96h402.162Zm-247.276-304.018c44.446-41.401 113.71-36.889 118.787-36.663l289.467-.113 6.204-417.504-43.544-10.717C1511.675 16.02 1426.053 0 1237.324 0 901.268 0 675.425 235.206 675.425 585.137v93.97H337v451.234h338.425V1920h451.234v-789.66h356.7l61.932-451.233H1126.66v-69.152c0-54.937 14.214-96 42.078-122.058Z" fill-rule="evenodd"></path> </g></svg>
+        <svg height="35px"  class="mx-2" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.168 19.0028C20.4724 19.0867 22.41 17.29 22.5 14.9858V9.01982C22.41 6.71569 20.4724 4.91893 18.168 5.00282H6.832C4.52763 4.91893 2.58998 6.71569 2.5 9.01982V14.9858C2.58998 17.29 4.52763 19.0867 6.832 19.0028H18.168Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 9.17784L15.169 11.3258C15.3738 11.4454 15.4997 11.6647 15.4997 11.9018C15.4997 12.139 15.3738 12.3583 15.169 12.4778L12.008 14.8278C11.408 15.2348 10.5 14.8878 10.5 14.2518V9.75184C10.5 9.11884 11.409 8.77084 12.008 9.17784Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+  </div>
+  <div class="row text-center mb-4 justify-content-center ">
+      <div class="row col-8 justify-content-center ">
+          <div class="col-2">
+              <h5>Privacy </h5> 
+          </div>
+          <div class="col-2">
+              <h5>Privacy </h5> 
+          </div>
+      </div>
+  </div>
+</div>
+
+
+  
+
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get all elements with class 'clickable-row'
+      var rows = document.querySelectorAll('.clickable-row');
+      
+      // Add click event listener to each row
+      rows.forEach(function(row) {
+          row.addEventListener("click", function() {
+              // Navigate to the URL specified in data-href attribute
+              var url = row.getAttribute("data-href");
+              if (url) {
+                  window.location.href = url;
+              }
+          });
+      });
+  });
+  </script>
+
+  
+</div>

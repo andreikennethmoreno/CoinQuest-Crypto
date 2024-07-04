@@ -1,0 +1,106 @@
+<%- include("partials/header.ejs") %>
+
+<style>
+  p{
+      font-size: 1rem;
+  }
+  .center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: 7rem;
+  }
+
+  
+</style>
+
+
+
+<div class="">
+  <div class="container center-screen">
+    <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col-4 d-none d-lg-block">
+            <div class="row">
+                <div class="col" style="display: flex; align-items: center;">
+                  <img height="30px "src="<%= coinDetails.image %>" alt="<%= coinDetails.name %> Logo" style="max-width: 100px;">
+                    <span class="mx-3 mt-3">
+                        <p><b><%= coinDetails.name %></b> <%= coinDetails.symbol %> Price (USD): </p>
+                    </span>
+                </div>
+            </div>
+  
+            <h2>$<%= coinDetails.market_data.current_price %></h2> 
+  
+            <h6>Rank #<%= coinDetails.market_data.market_cap_rank %></h6>
+  
+            <p class="d-flex justify-content-between">
+                Market Cap (USD): 
+                <span class="ml-auto">
+                  <b>$<%= coinDetails.market_data.market_cap %></b>
+                </span>
+            </p>
+  
+            <p class="d-flex justify-content-between">
+                24h Price Change (%):
+                <span class="ml-auto">
+                  <b>
+                    <% if (coinDetails.market_data.price_change_percentage_24h >= 0) { %>
+                      <span class="arrow-up">
+                        <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                      </span>
+                    <% } else { %>
+                      <span class="arrow-down">
+                        <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                      </span>
+                    <% } %>
+                    <span class="<%= coinDetails.market_data.price_change_percentage_24h >= 0 ? 'positive-change' : 'negative-change' %>">
+                      <%= coinDetails.market_data.price_change_percentage_24h.toFixed(6) %>% 
+                    </span>
+                  </b>
+                </span>
+            </p>
+  
+            <p class="d-flex justify-content-between">
+                7d Price Change (%):
+                <span class="ml-auto">
+                  <b>
+                    <span class="ml-auto">
+                      <b>
+                        <% if (coinDetails.market_data.price_change_percentage_7d  >= 0) { %>
+                          <span class="arrow-up">
+                            <svg height="15px" style="margin-bottom: 5px;"fill="#008000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#008000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } else { %>
+                          <span class="arrow-down">
+                            <svg height="15px" fill="#ff0000" style="margin-bottom: 5px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ff0000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,21H3L12,3Z"></path></g></svg>
+                          </span>
+                        <% } %>
+                        <span class="<%= coinDetails.market_data.price_change_percentage_7d  >= 0 ? 'positive-change' : 'negative-change' %>">
+                          <%= coinDetails.market_data.price_change_percentage_7d .toFixed(6) %>% 
+                        </span>
+                      </b>
+                    </span>
+                  </b>
+                </span>
+            </p>
+        
+        </div>
+        
+        <div class="col p-4 d-flex flex-column position-static">
+           
+            <p class="card-text mb-auto" style="height: 300px; overflow-y: scroll;">
+                Bitcoin is the first successful internet money based on peer-to-peer technology; whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency. It was created by an anonymous individual/group under the name, Satoshi Nakamoto. The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process. Bitcoin is changing the way we see money as we speak. The idea was to produce a means of exchange, independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way. It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no central authority and banks. Bitcoin is designed to have only 21 million BTC ever created, thus making it a deflationary currency. Bitcoin uses the SHA-256 hashing algorithm with an average transaction confirmation time of 10 minutes. Miners today are mining Bitcoin using ASIC chip dedicated to only mining Bitcoin, and the hash rate has shot up to peta hashes. Being the first successful online cryptography currency, Bitcoin has inspired other alternative currencies such as Litecoin, Peercoin, Primecoin, and so on. The cryptocurrency then took off with the innovation of the turing-complete smart contract by Ethereum which led to the development of other amazing projects such as EOS, Tron, and even crypto-collectibles such as CryptoKitties.                </p>                
+             
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ 
+</body>
+</html>
